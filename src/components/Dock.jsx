@@ -1,99 +1,127 @@
 import React, { useState } from 'react'
-import { 
-  Folder, 
-  Globe, 
-  Image, 
-  Terminal, 
-  Contact,
-  Trash2,
-  FileText 
-} from 'lucide-react'
 
-function Dock({ onOpenWindow }) {
-  const [hoveredIndex, setHoveredIndex] = useState(null)
+const dockApps = [
+  { id: 'finder', name: 'Finder', icon: '📁', gradient: 'from-blue-400 to-blue-600' },
+  { id: 'safari', name: 'Safari', icon: '🧭', gradient: 'from-blue-300 to-blue-500' },
+  { id: 'terminal', name: 'Terminal', icon: '⌨️', gradient: 'from-gray-500 to-gray-700' },
+  { id: 'projects', name: 'Projects', icon: '🚀', gradient: 'from-purple-400 to-pink-500' },
+  { id: 'blog', name: 'Blog', icon: '✍️', gradient: 'from-orange-400 to-red-500' },
+  { id: 'techstack', name: 'Tech Stack', icon: '⚛️', gradient: 'from-cyan-400 to-blue-500' },
+  { id: 'photos', name: 'Photos', icon: '🖼️', gradient: 'from-pink-400 to-purple-500' },
+  { id: 'contact', name: 'Contact', icon: '📧', gradient: 'from-green-400 to-emerald-500' },
+  { id: 'resume', name: 'Resume', icon: '📄', gradient: 'from-amber-400 to-orange-500' },
+]
 
-  const dockItems = [
-    { id: 'finder', name: 'Finder', icon: Folder },
-    { id: 'safari', name: 'Safari', icon: Globe },
-    { id: 'photos', name: 'Photos', icon: Image },
-    { id: 'contact', name: 'Contact', icon: Contact },
-    { id: 'terminal', name: 'Terminal', icon: Terminal },
-    { id: 'resume', name: 'Resume', icon: FileText },
-    { id: 'trash', name: 'Trash', icon: Trash2 },
-  ]
+function Dock({ onOpenWindow, openWindows }) {
+  const [hoveredApp, setHoveredApp] = useState(null)
+  const [bounceApp, setBounceApp] = useState(null)
 
-  const handleClick = (item) => {
-    if (item.id !== 'trash') {
-      onOpenWindow(item.id)
-    }
+  const handleClick = (appId) => {
+    setBounceApp(appId)
+    setTimeout(() => setBounceApp(null), 500)
+    onOpenWindow(appId)
   }
 
   return (
-    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-50">
-      <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-2 flex items-end gap-1 border border-white/20 shadow-2xl">
-        {dockItems.map((item, index) => {
-          const Icon = item.icon
-          const isHovered = hoveredIndex === index
+    <div className="fixed bottom-2 left-1/2 transform -translate-x-1/2 z-50">
+      {/* Dock Container */}
+      <div className="bg-white/10 backdrop-blur-2xl border border-white/20 rounded-2xl px-3 py-2 flex items-end gap-1 shadow-2xl">
+        {dockApps.map((app) => {
+          const isOpen = openWindows?.includes(app.id)
+          const isHovered = hoveredApp === app.id
+          const isBouncing = bounceApp === app.id
           
           return (
             <div
-              key={item.id}
+              key={app.id}
               className="relative group"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
+              onMouseEnter={() => setHoveredApp(app.id)}
+              onMouseLeave={() => setHoveredApp(null)}
             >
-              <button
-                onClick={() => handleClick(item)}
-                className={`
-                  dock-icon w-14 h-14 rounded-xl flex items-center justify-center
-                  transition-all duration-300 cursor-pointer
-                  ${isHovered ? 'translate-y-[-20px]' : 'translate-y-0'}
-                  ${item.id === 'finder' ? 'bg-gradient-to-br from-blue-400 to-blue-600' : ''}
-                  ${item.id === 'safari' ? 'bg-gradient-to-br from-blue-500 to-cyan-400' : ''}
-                  ${item.id === 'photos' ? 'bg-gradient-to-br from-pink-500 to-purple-500' : ''}
-                  ${item.id === 'contact' ? 'bg-gradient-to-br from-green-500 to-emerald-500' : ''}
-                  ${item.id === 'terminal' ? 'bg-gradient-to-br from-gray-600 to-gray-800' : ''}
-                  ${item.id === 'resume' ? 'bg-gradient-to-br from-white to-gray-200' : ''}
-                  ${item.id === 'trash' ? 'bg-gradient-to-br from-red-500 to-red-600' : ''}
-                  hover:scale-110
-                `}
-              >
-                <Icon size={28} className={item.id === 'resume' ? 'text-gray-800' : 'text-white'} />
-              </button>
-              
               {/* Tooltip */}
               <div className={`
-                absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2
-                px-3 py-1.5 bg-gray-900/90 backdrop-blur-sm text-white text-xs
-                rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100
-                transition-opacity duration-200 pointer-events-none
+                absolute -top-10 left-1/2 transform -translate-x-1/2
+                bg-[#2d2d2d] text-white text-xs px-3 py-1.5 rounded-lg
+                opacity-0 group-hover:opacity-100 transition-all duration-200
+                whitespace-nowrap pointer-events-none
+                ${isHovered ? 'translate-y-0' : 'translate-y-2'}
               `}>
-                {item.name}
+                {app.name}
+                {isOpen && <span className="ml-2 text-green-400">•</span>}
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-[#2d2d2d]" />
               </div>
-              
-              {/* Notification dot */}
-              {item.id === 'contact' && (
-                <span className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-red-500 rounded-full border-2 border-[#1e1e1e]" />
-              )}
+
+              {/* Dock Icon */}
+              <button
+                onClick={() => handleClick(app.id)}
+                className={`
+                  relative flex flex-col items-center justify-center
+                  transition-all duration-300 ease-out
+                  ${isBouncing ? 'animate-bounce' : ''}
+                `}
+                style={{
+                  width: isHovered ? '72px' : '56px',
+                  height: isHovered ? '72px' : '56px',
+                }}
+              >
+                {/* Icon Background */}
+                <div className={`
+                  w-full h-full rounded-2xl
+                  bg-gradient-to-br ${app.gradient}
+                  shadow-lg
+                  flex items-center justify-center
+                  transition-all duration-300
+                  ${isHovered ? 'scale-110 shadow-xl' : 'scale-100'}
+                  ${isOpen ? 'ring-2 ring-white/50 ring-offset-2 ring-offset-transparent' : ''}
+                `}>
+                  <span className="text-2xl">{app.icon}</span>
+                </div>
+
+                {/* Active Indicator */}
+                {isOpen && (
+                  <div className="absolute -bottom-1 w-1 h-1 bg-white/60 rounded-full" />
+                )}
+              </button>
             </div>
           )
         })}
-        
-        {/* Divider */}
-        <div className="w-px h-12 bg-white/20 mx-1" />
-        
-        {/* Launchpad indicator */}
-        <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
-          <div className="grid grid-cols-3 gap-0.5">
-            {[...Array(9)].map((_, i) => (
-              <div key={i} className="w-1.5 h-1.5 bg-white/80 rounded-sm" />
-            ))}
+
+        {/* Separator */}
+        <div className="w-[1px] h-12 bg-white/20 mx-1 self-center" />
+
+        {/* Trash */}
+        <div
+          className="relative group"
+          onMouseEnter={() => setHoveredApp('trash')}
+          onMouseLeave={() => setHoveredApp(null)}
+        >
+          <div className={`
+            absolute -top-10 left-1/2 transform -translate-x-1/2
+            bg-[#2d2d2d] text-white text-xs px-3 py-1.5 rounded-lg
+            opacity-0 group-hover:opacity-100 transition-all duration-200
+            whitespace-nowrap pointer-events-none
+            ${hoveredApp === 'trash' ? 'translate-y-0' : 'translate-y-2'}
+          `}>
+            Trash
+            <div className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-[#2d2d2d]" />
           </div>
+          
+          <button
+            className="transition-all duration-300"
+            style={{
+              width: hoveredApp === 'trash' ? '56px' : '48px',
+              height: hoveredApp === 'trash' ? '56px' : '48px',
+            }}
+          >
+            <div className="w-full h-full rounded-2xl bg-gray-600/50 flex items-center justify-center">
+              <span className="text-xl">🗑️</span>
+            </div>
+          </button>
         </div>
       </div>
-      
-      {/* Dock reflection */}
-      <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-[90%] h-4 bg-black/20 blur-xl rounded-full" />
+
+      {/* Dock Reflection */}
+      <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-[90%] h-4 bg-white/5 backdrop-blur-sm rounded-full" />
     </div>
   )
 }
