@@ -18,41 +18,42 @@ const TechStack = () => {
   const skills = [
     // Frontend
     { name: 'React', category: 'Frontend', level: 95, years: 5, color: 'from-cyan-400 to-blue-500', icon: '⚛️', description: 'Building modern web applications with hooks, context, and state management' },
-    { name: 'Next.js', category: 'Frontend', level: 90, years: 3, color: 'from-gray-700 to-black', icon: '▲', description: 'Server-side rendering, static site generation, and full-stack apps' },
-    { name: 'TypeScript', category: 'Frontend', level: 92, years: 4, color: 'from-blue-400 to-blue-600', icon: 'TS', description: 'Type-safe JavaScript for scalable applications' },
-    { name: 'Vue.js', category: 'Frontend', level: 85, years: 3, color: 'from-green-400 to-emerald-500', icon: 'V', description: 'Progressive JavaScript framework for building UIs' },
+    { name: 'Next.js', category: 'Frontend', level: 88, years: 2, color: 'from-gray-700 to-black', icon: '▲', description: 'Server-side rendering, static site generation, and full-stack apps' },
+    { name: 'TypeScript', category: 'Frontend', level: 90, years: 3, color: 'from-blue-400 to-blue-600', icon: 'TS', description: 'Type-safe JavaScript for scalable applications' },
+    { name: 'Vue.js', category: 'Frontend', level: 80, years: 2, color: 'from-green-400 to-emerald-500', icon: 'V', description: 'Progressive JavaScript framework for building UIs' },
     { name: 'Tailwind CSS', category: 'Frontend', level: 95, years: 4, color: 'from-cyan-400 to-teal-500', icon: '🎨', description: 'Utility-first CSS framework for rapid styling' },
-    { name: 'Redux', category: 'Frontend', level: 88, years: 4, color: 'from-purple-400 to-purple-600', icon: 'R', description: 'Predictable state container for JavaScript apps' },
+    { name: 'Redux', category: 'Frontend', level: 85, years: 3, color: 'from-purple-400 to-purple-600', icon: 'R', description: 'Predictable state container for JavaScript apps' },
     
     // Backend
-    { name: 'Node.js', category: 'Backend', level: 93, years: 5, color: 'from-green-500 to-green-700', icon: '🟢', description: 'Server-side JavaScript runtime for scalable applications' },
-    { name: 'Python', category: 'Backend', level: 88, years: 6, color: 'from-yellow-400 to-yellow-600', icon: '🐍', description: 'Versatile language for web, data, and AI applications' },
-    { name: 'Go', category: 'Backend', level: 78, years: 2, color: 'from-cyan-400 to-blue-500', icon: 'G', description: 'High-performance systems programming language' },
-    { name: 'Express.js', category: 'Backend', level: 92, years: 5, color: 'from-gray-400 to-gray-600', icon: 'E', description: 'Minimal and flexible Node.js web application framework' },
-    { name: 'GraphQL', category: 'Backend', level: 85, years: 3, color: 'from-pink-400 to-rose-500', icon: '⬡', description: 'Query language and runtime for APIs' },
+    { name: 'Node.js', category: 'Backend', level: 92, years: 5, color: 'from-green-500 to-green-700', icon: '🟢', description: 'Server-side JavaScript runtime for scalable applications' },
+    { name: 'Python', category: 'Backend', level: 82, years: 4, color: 'from-yellow-400 to-yellow-600', icon: '🐍', description: 'Versatile language for web, data, and AI applications' },
+    { name: 'Go', category: 'Backend', level: 72, years: 1, color: 'from-cyan-400 to-blue-500', icon: 'G', description: 'High-performance systems programming language' },
+    { name: 'Express.js', category: 'Backend', level: 90, years: 4, color: 'from-gray-400 to-gray-600', icon: 'E', description: 'Minimal and flexible Node.js web application framework' },
+    { name: 'GraphQL', category: 'Backend', level: 80, years: 2, color: 'from-pink-400 to-rose-500', icon: '⬡', description: 'Query language and runtime for APIs' },
     
     // Database
-    { name: 'PostgreSQL', category: 'Database', level: 90, years: 5, color: 'from-blue-400 to-indigo-500', icon: '🐘', description: 'Advanced open-source relational database' },
-    { name: 'MongoDB', category: 'Database', level: 88, years: 4, color: 'from-green-400 to-green-600', icon: '🍃', description: 'Flexible document-oriented NoSQL database' },
-    { name: 'Redis', category: 'Database', level: 82, years: 3, color: 'from-red-400 to-red-600', icon: '📦', description: 'In-memory data structure store for caching' },
-    { name: 'Firebase', category: 'Database', level: 85, years: 4, color: 'from-yellow-400 to-orange-500', icon: '🔥', description: 'Backend-as-a-service platform for mobile and web' },
+    { name: 'PostgreSQL', category: 'Database', level: 88, years: 4, color: 'from-blue-400 to-indigo-500', icon: '🐘', description: 'Advanced open-source relational database' },
+    { name: 'MongoDB', category: 'Database', level: 85, years: 3, color: 'from-green-400 to-green-600', icon: '🍃', description: 'Flexible document-oriented NoSQL database' },
+    { name: 'Redis', category: 'Database', level: 78, years: 2, color: 'from-red-400 to-red-600', icon: '📦', description: 'In-memory data structure store for caching' },
+    { name: 'Firebase', category: 'Database', level: 82, years: 3, color: 'from-yellow-400 to-orange-500', icon: '🔥', description: 'Backend-as-a-service platform for mobile and web' },
+    { name: 'Supabase', category: 'Database', level: 75, years: 1, color: 'from-green-400 to-emerald-500', icon: '🔷', description: 'Open source Firebase alternative with Postgres' },
     
     // DevOps
-    { name: 'Docker', category: 'DevOps', level: 90, years: 4, color: 'from-blue-400 to-blue-600', icon: '🐳', description: 'Container platform for building and shipping apps' },
-    { name: 'Kubernetes', category: 'DevOps', level: 78, years: 2, color: 'from-blue-400 to-purple-500', icon: '☸️', description: 'Container orchestration for automating deployment' },
-    { name: 'AWS', category: 'DevOps', level: 85, years: 4, color: 'from-orange-400 to-orange-600', icon: '☁️', description: 'Comprehensive cloud computing platform' },
-    { name: 'CI/CD', category: 'DevOps', level: 88, years: 4, color: 'from-green-400 to-teal-500', icon: '⚡', description: 'Continuous integration and deployment pipelines' },
-    { name: 'Terraform', category: 'DevOps', level: 75, years: 2, color: 'from-purple-400 to-indigo-500', icon: '🏗️', description: 'Infrastructure as code tool for cloud resources' },
+    { name: 'Docker', category: 'DevOps', level: 85, years: 3, color: 'from-blue-400 to-blue-600', icon: '🐳', description: 'Container platform for building and shipping apps' },
+    { name: 'Kubernetes', category: 'DevOps', level: 70, years: 1, color: 'from-blue-400 to-purple-500', icon: '☸️', description: 'Container orchestration for automating deployment' },
+    { name: 'AWS', category: 'DevOps', level: 80, years: 3, color: 'from-orange-400 to-orange-600', icon: '☁️', description: 'Comprehensive cloud computing platform' },
+    { name: 'CI/CD', category: 'DevOps', level: 85, years: 3, color: 'from-green-400 to-teal-500', icon: '⚡', description: 'Continuous integration and deployment pipelines' },
+    { name: 'GitHub Actions', category: 'DevOps', level: 88, years: 2, color: 'from-gray-400 to-gray-600', icon: '🏃', description: 'Automate workflows directly from GitHub' },
     
     // Mobile
-    { name: 'React Native', category: 'Mobile', level: 82, years: 3, color: 'from-blue-400 to-cyan-500', icon: '⚛️', description: 'Cross-platform mobile app development with React' },
-    { name: 'Flutter', category: 'Mobile', level: 70, years: 1, color: 'from-blue-400 to-indigo-500', icon: '🦋', description: 'Google UI toolkit for natively compiled apps' },
+    { name: 'React Native', category: 'Mobile', level: 78, years: 2, color: 'from-blue-400 to-cyan-500', icon: '⚛️', description: 'Cross-platform mobile app development with React' },
+    { name: 'Flutter', category: 'Mobile', level: 65, years: 1, color: 'from-blue-400 to-indigo-500', icon: '🦋', description: 'Google UI toolkit for natively compiled apps' },
     
     // Tools
     { name: 'Git', category: 'Tools', level: 95, years: 6, color: 'from-orange-400 to-red-500', icon: '📊', description: 'Version control system for tracking changes' },
     { name: 'VS Code', category: 'Tools', level: 98, years: 5, color: 'from-blue-400 to-blue-600', icon: '💻', description: 'Powerful and extensible code editor' },
-    { name: 'Figma', category: 'Tools', level: 80, years: 3, color: 'from-purple-400 to-pink-500', icon: '🎨', description: 'Collaborative design tool for UI/UX' },
-    { name: 'Linux', category: 'Tools', level: 88, years: 6, color: 'from-yellow-400 to-orange-500', icon: '🐧', description: 'Open-source operating system for servers' },
+    { name: 'Figma', category: 'Tools', level: 82, years: 3, color: 'from-purple-400 to-pink-500', icon: '🎨', description: 'Collaborative design tool for UI/UX' },
+    { name: 'Linux', category: 'Tools', level: 85, years: 5, color: 'from-yellow-400 to-orange-500', icon: '🐧', description: 'Open-source operating system for servers' },
   ]
 
   const filteredSkills = selectedCategory === 'All' 

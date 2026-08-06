@@ -162,10 +162,10 @@ function FinderContent() {
   const folders = [
     { name: 'Documents', count: 24, color: 'from-blue-500 to-blue-600' },
     { name: 'Downloads', count: 12, color: 'from-green-500 to-green-600' },
-    { name: 'Pictures', count: 156, color: 'from-pink-500 to-pink-600' },
     { name: 'Projects', count: 8, color: 'from-purple-500 to-purple-600' },
+    { name: 'Photos', count: 156, color: 'from-pink-500 to-pink-600' },
     { name: 'Code', count: 15, color: 'from-orange-500 to-orange-600' },
-    { name: 'Music', count: 89, color: 'from-red-500 to-red-600' },
+    { name: 'Notes', count: 89, color: 'from-red-500 to-red-600' },
   ]
 
   return (
@@ -229,7 +229,7 @@ function FinderContent() {
 
 function TerminalContent() {
   const [lines, setLines] = useState([
-    { type: 'system', text: 'Last login: Mon Jul 21 05:00:00 on ttys000' },
+    { type: 'system', text: 'Last login: Wed Aug 06 08:00:00 on ttys000' },
   ])
   const [input, setInput] = useState('')
   const [history, setHistory] = useState([])
@@ -238,11 +238,12 @@ function TerminalContent() {
   const bottomRef = useRef(null)
 
   const commands = {
-    help: ['Available commands:', '  help     - Show this help', '  about    - About me', '  skills   - List skills', '  projects - List projects', '  clear    - Clear terminal', '  whoami   - Who am I?', '  date     - Current date'],
-    about: ['👋 Hi, I\'m a Full Stack Developer', 'Passionate about building beautiful web applications', 'Love working with React, Node.js, and modern technologies'],
+    help: ['Available commands:', '  help     - Show this help', '  about    - About me', '  skills   - List skills', '  projects - List projects', '  clear    - Clear terminal', '  whoami   - Who am I?', '  date     - Current date', '  contact  - Contact info'],
+    about: ['👋 Hi, I\'m Antono', 'Full Stack Developer from Jakarta, Indonesia', 'Passionate about building beautiful web applications', 'Love working with React, Node.js, and modern technologies'],
     skills: ['Frontend: React, Vue, TypeScript, Tailwind CSS, Next.js', 'Backend: Node.js, Python, Go, PostgreSQL, MongoDB', 'Tools: Git, Docker, AWS, CI/CD, Figma'],
-    projects: ['🌐 macfolio - macOS-style portfolio website', '🛒 ecommerce - Full-stack e-commerce platform', '📊 dashboard - Analytics dashboard with real-time data', '📱 mobile - React Native mobile application'],
-    whoami: ['developer'],
+    projects: ['🌐 macfolio - macOS-style portfolio website (this!)', '🛒 ecommerce - Full-stack e-commerce platform', '📊 dashboard - Analytics dashboard with real-time data', '📱 mobile - React Native mobile application'],
+    whoami: ['antono'],
+    contact: ['Email: antonockr1@gmail.com', 'GitHub: github.com/antono4', 'LinkedIn: linkedin.com/in/antono4'],
     date: [new Date().toString()],
     clear: 'CLEAR',
   }
@@ -324,34 +325,34 @@ function TerminalContent() {
 function ProjectsContent() {
   const projects = [
     { 
-      name: 'E-Commerce Platform', 
-      desc: 'Full-stack online store with Stripe payment integration, admin dashboard, and real-time inventory management.',
-      tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      stars: 234,
-      forks: 45,
+      name: 'MacFolio', 
+      desc: 'macOS-style portfolio website with interactive window management, desktop icons, and dock. Built with React and Tailwind CSS.',
+      tech: ['React', 'Tailwind CSS', 'Vite', 'Lucide Icons'],
+      stars: 45,
+      forks: 12,
       color: 'from-purple-500 to-pink-500'
     },
     { 
-      name: 'Task Management App', 
-      desc: 'Collaborative project management tool with real-time updates, kanban boards, and team collaboration features.',
-      tech: ['Next.js', 'PostgreSQL', 'Tailwind', 'Socket.io'],
-      stars: 189,
-      forks: 32,
+      name: 'Inventory Management System', 
+      desc: 'Full-stack inventory management system with real-time stock tracking, barcode scanning, and reporting dashboard.',
+      tech: ['Next.js', 'PostgreSQL', 'Prisma', 'Tailwind'],
+      stars: 78,
+      forks: 18,
       color: 'from-blue-500 to-cyan-500'
     },
     { 
-      name: 'Analytics Dashboard', 
-      desc: 'Real-time analytics dashboard with interactive charts, data visualization, and customizable widgets.',
-      tech: ['React', 'D3.js', 'Node.js', 'Redis'],
+      name: 'Task Tracker App', 
+      desc: 'Productivity app with kanban boards, task priorities, due dates, and team collaboration features.',
+      tech: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
       stars: 156,
       forks: 28,
       color: 'from-green-500 to-emerald-500'
     },
     { 
-      name: 'Portfolio Website', 
-      desc: 'This macOS-style portfolio website with window management and interactive desktop experience.',
-      tech: ['React', 'Tailwind CSS', 'Vite'],
-      stars: 98,
+      name: 'Weather Dashboard', 
+      desc: 'Real-time weather dashboard with interactive maps, 7-day forecasts, and location-based alerts.',
+      tech: ['React', 'Chart.js', 'OpenWeather API', 'Tailwind'],
+      stars: 92,
       forks: 15,
       color: 'from-orange-500 to-amber-500'
     },

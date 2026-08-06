@@ -14,20 +14,20 @@ const Photos = () => {
 
   const photos = [
     { id: 1, src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800', title: 'Mountain Sunrise', location: 'Swiss Alps', date: 'March 2024', category: 'Nature' },
-    { id: 2, src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800', title: 'Urban Architecture', location: 'New York, USA', date: 'February 2024', category: 'Architecture' },
+    { id: 2, src: 'https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=800', title: 'Beautiful Mosque', location: 'Jakarta, Indonesia', date: 'February 2024', category: 'Architecture' },
     { id: 3, src: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800', title: 'Starry Night', location: 'Yosemite, USA', date: 'January 2024', category: 'Night Sky' },
-    { id: 4, src: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800', title: 'Forest Trail', location: 'Oregon, USA', date: 'December 2023', category: 'Nature' },
-    { id: 5, src: 'https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=800', title: 'Ocean Sunset', location: 'Maldives', date: 'November 2023', category: 'Seascape' },
-    { id: 6, src: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800', title: 'Lake Reflection', location: 'Banff, Canada', date: 'October 2023', category: 'Nature' },
-    { id: 7, src: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800', title: 'Misty Mountains', location: 'China', date: 'September 2023', category: 'Landscape' },
-    { id: 8, src: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800', title: 'Green Forest', location: 'Germany', date: 'August 2023', category: 'Nature' },
-    { id: 9, src: 'https://images.unsplash.com/photo-1518173946687-a4c036bc9083?w=800', title: 'Desert Dunes', location: 'Morocco', date: 'July 2023', category: 'Landscape' },
-    { id: 10, src: 'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=800', title: 'Green Valley', location: 'Iceland', date: 'June 2023', category: 'Landscape' },
-    { id: 11, src: 'https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=800', title: 'Autumn Colors', location: 'Vermont, USA', date: 'October 2022', category: 'Nature' },
-    { id: 12, src: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800', title: 'Waterfall', location: 'Norway', date: 'May 2022', category: 'Nature' },
-    { id: 13, src: 'https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800', title: 'Tropical Beach', location: 'Thailand', date: 'April 2022', category: 'Seascape' },
-    { id: 14, src: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=800', title: 'Italian Coast', location: 'Cinque Terre, Italy', date: 'March 2022', category: 'Travel' },
-    { id: 15, src: 'https://images.unsplash.com/photo-1536437075651-01d675529a6b?w=800', title: 'Northern Lights', location: 'Norway', date: 'February 2022', category: 'Night Sky' },
+    { id: 4, src: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800', title: 'Tropical Beach', location: 'Bali, Indonesia', date: 'December 2023', category: 'Seascape' },
+    { id: 5, src: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800', title: 'Temple Gate', location: 'Yogyakarta, Indonesia', date: 'November 2023', category: 'Culture' },
+    { id: 6, src: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800', title: 'Mountain Lake', location: 'Raja Ampat, Indonesia', date: 'October 2023', category: 'Nature' },
+    { id: 7, src: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800', title: 'Tea Plantation', location: 'Malang, Indonesia', date: 'September 2023', category: 'Landscape' },
+    { id: 8, src: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800', title: 'Green Forest', location: 'Borneo, Indonesia', date: 'August 2023', category: 'Nature' },
+    { id: 9, src: 'https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?w=800', title: 'Sunset Beach', location: 'Bali, Indonesia', date: 'July 2023', category: 'Seascape' },
+    { id: 10, src: 'https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=800', title: 'Rice Terraces', location: 'Bali, Indonesia', date: 'June 2023', category: 'Landscape' },
+    { id: 11, src: 'https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=800', title: 'Waterfall', location: 'Lombok, Indonesia', date: 'October 2022', category: 'Nature' },
+    { id: 12, src: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800', title: 'Borobudur Temple', location: 'Central Java, Indonesia', date: 'May 2022', category: 'Culture' },
+    { id: 13, src: 'https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800', title: 'Pink Beach', location: 'Komodo, Indonesia', date: 'April 2022', category: 'Seascape' },
+    { id: 14, src: 'https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=800', title: 'Mountain Peak', location: 'Flores, Indonesia', date: 'March 2022', category: 'Landscape' },
+    { id: 15, src: 'https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=800', title: 'Blue Lagoon', location: 'Bali, Indonesia', date: 'February 2022', category: 'Seascape' },
   ]
 
   const filteredPhotos = activeTab === 'favorites' 
