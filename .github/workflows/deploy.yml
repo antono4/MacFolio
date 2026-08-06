@@ -20,9 +20,13 @@ jobs:
     permissions:
       contents: write
       pages: write
+      id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
       
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -36,6 +40,11 @@ jobs:
       - name: Build
         run: npm run build
       
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
@@ -44,13 +53,12 @@ jobs:
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
       
-      - name: Configure GitHub Pages to use gh-pages branch
+      - name: Configure GitHub Pages source
         run: |
-          echo "Waiting for gh-pages to be created..."
-          sleep 5
-          curl -s -X PATCH \
+          echo "Configuring GitHub Pages to use gh-pages branch..."
+          curl -s -X PUT \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github.v3+json" \
             -H "Content-Type: application/json" \
             "https://api.github.com/repos/${{ github.repository }}/pages" \
-            -d '{"source":{"branch":"gh-pages","path":"/"}}' || echo "Failed to configure pages"
+            -d '{"build_type": "legacy", "source": {"branch": "gh-pages", "path": "/"}}' || echo "Note: GitHub Pages source update may require manual configuration"
