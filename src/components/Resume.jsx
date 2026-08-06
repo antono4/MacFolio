@@ -3,60 +3,60 @@ import { Mail, Phone, MapPin, Calendar, Download, Github, Linkedin, ExternalLink
 
 const Resume = () => {
   const personalInfo = {
-    name: 'John Anderson',
+    name: 'Antono',
     title: 'Full Stack Developer',
-    email: 'john.anderson@email.com',
-    phone: '+1 (555) 123-4567',
-    location: 'San Francisco, CA',
-    github: 'github.com/janderson',
-    linkedin: 'linkedin.com/in/janderson',
-    website: 'johnanderson.dev',
+    email: 'antonockr1@gmail.com',
+    phone: '+62 812 XXXX XXXX',
+    location: 'Jakarta, Indonesia',
+    github: 'github.com/antono4',
+    linkedin: 'linkedin.com/in/antono4',
+    website: 'antono.dev',
   }
 
   const experience = [
     {
-      title: 'Senior Software Engineer',
-      company: 'TechCorp Inc.',
-      period: 'Jan 2022 - Present',
-      description: 'Led development of microservices architecture serving 10M+ users. Mentored junior developers and improved deployment pipeline efficiency by 40%.',
-      technologies: ['React', 'Node.js', 'AWS', 'PostgreSQL', 'Docker']
+      title: 'Full Stack Developer',
+      company: 'Freelance',
+      period: '2022 - Present',
+      description: 'Building modern web applications with React and Node.js. Creating responsive and user-friendly interfaces for various clients.',
+      technologies: ['React', 'Node.js', 'TypeScript', 'PostgreSQL', 'Docker']
     },
     {
-      title: 'Software Engineer',
-      company: 'StartupXYZ',
-      period: 'Mar 2020 - Dec 2021',
-      description: 'Built scalable web applications using React and Node.js. Implemented CI/CD pipelines and reduced production bugs by 60%.',
-      technologies: ['React', 'TypeScript', 'Python', 'MongoDB', 'GraphQL']
+      title: 'Web Developer',
+      company: 'Tech Studio',
+      period: '2020 - 2022',
+      description: 'Developed responsive websites and web applications. Implemented modern UI/UX designs and optimized web performance.',
+      technologies: ['React', 'JavaScript', 'Tailwind CSS', 'MongoDB', 'Firebase']
     },
     {
       title: 'Junior Developer',
-      company: 'WebDev Agency',
-      period: 'Jun 2018 - Feb 2020',
-      description: 'Developed responsive websites and web applications for various clients. Collaborated with design team to implement pixel-perfect UIs.',
-      technologies: ['JavaScript', 'PHP', 'MySQL', 'WordPress']
+      company: 'Startup Hub',
+      period: '2018 - 2020',
+      description: 'Started career building WordPress websites and learning modern web technologies.',
+      technologies: ['JavaScript', 'PHP', 'MySQL', 'WordPress', 'HTML/CSS']
     }
   ]
 
   const education = [
     {
-      degree: 'Bachelor of Science in Computer Science',
-      school: 'Stanford University',
+      degree: 'Bachelor of Computer Science',
+      school: 'University of Indonesia',
       period: '2014 - 2018',
-      gpa: '3.8/4.0',
-      achievements: ['Dean\'s List', 'Computer Science Award', 'ACM Contest Finalist']
+      gpa: '3.5/4.0',
+      achievements: ['Dean\'s List', 'Programming Competition Winner']
     }
   ]
 
   const skills = {
     'Frontend': ['React', 'Vue.js', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Redux'],
-    'Backend': ['Node.js', 'Python', 'Go', 'Express', 'FastAPI', 'GraphQL'],
-    'Database': ['PostgreSQL', 'MongoDB', 'Redis', 'DynamoDB', 'Firebase'],
-    'DevOps': ['Docker', 'Kubernetes', 'AWS', 'CI/CD', 'Terraform', 'Linux']
+    'Backend': ['Node.js', 'Python', 'Express', 'FastAPI', 'GraphQL'],
+    'Database': ['PostgreSQL', 'MongoDB', 'Redis', 'Firebase', 'Supabase'],
+    'DevOps': ['Docker', 'Kubernetes', 'AWS', 'CI/CD', 'Linux', 'Git']
   }
 
   const certifications = [
-    { name: 'AWS Solutions Architect', issuer: 'Amazon Web Services', year: '2023' },
-    { name: 'Google Cloud Professional', issuer: 'Google', year: '2022' },
+    { name: 'AWS Cloud Practitioner', issuer: 'Amazon Web Services', year: '2024' },
+    { name: 'Meta Front-End Developer', issuer: 'Meta', year: '2023' },
   ]
 
   return (
@@ -67,7 +67,7 @@ const Resume = () => {
           <div className="flex items-start justify-between">
             <div className="flex items-center gap-6">
               <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-4xl font-bold text-white shadow-lg">
-                JA
+                AN
               </div>
               <div>
                 <h1 className="text-3xl font-bold text-gray-900 mb-1">{personalInfo.name}</h1>

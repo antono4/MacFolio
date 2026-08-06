@@ -9,15 +9,15 @@ const Contact = () => {
 
   const socialLinks = [
     { icon: Github, label: 'GitHub', url: 'https://github.com/antono4', color: 'hover:bg-gray-700', bg: 'bg-gray-600' },
-    { icon: Twitter, label: 'Twitter', url: 'https://twitter.com', color: 'hover:bg-sky-500', bg: 'bg-sky-500' },
-    { icon: Linkedin, label: 'LinkedIn', url: 'https://linkedin.com', color: 'hover:bg-blue-600', bg: 'bg-blue-600' },
+    { icon: Twitter, label: 'Twitter', url: 'https://twitter.com/antono4', color: 'hover:bg-sky-500', bg: 'bg-sky-500' },
+    { icon: Linkedin, label: 'LinkedIn', url: 'https://linkedin.com/in/antono4', color: 'hover:bg-blue-600', bg: 'bg-blue-600' },
     { icon: MessageCircle, label: 'Discord', url: '#', color: 'hover:bg-indigo-500', bg: 'bg-indigo-500' },
   ]
 
   const quickActions = [
-    { icon: Mail, label: 'Email', value: 'hello@johnanderson.dev', action: () => window.location.href = 'mailto:hello@johnanderson.dev' },
-    { icon: Phone, label: 'Phone', value: '+1 (555) 123-4567', action: () => {} },
-    { icon: MapPin, label: 'Location', value: 'San Francisco, CA', action: () => {} },
+    { icon: Mail, label: 'Email', value: 'antonockr1@gmail.com', action: () => window.location.href = 'mailto:antonockr1@gmail.com' },
+    { icon: Phone, label: 'Phone', value: '+62 812 XXXX XXXX', action: () => {} },
+    { icon: MapPin, label: 'Location', value: 'Jakarta, Indonesia', action: () => {} },
     { icon: Calendar, label: 'Availability', value: 'Open to opportunities', action: () => {} },
   ]
 
@@ -59,10 +59,10 @@ const Contact = () => {
               <div className="flex flex-col items-center text-center">
                 <div className="w-28 h-28 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-1 mb-4">
                   <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center text-3xl font-bold text-white">
-                    JA
+                    AN
                   </div>
                 </div>
-                <h2 className="text-xl font-bold text-white mb-1">John Anderson</h2>
+                <h2 className="text-xl font-bold text-white mb-1">Antono</h2>
                 <p className="text-blue-400 text-sm mb-4">Full Stack Developer</p>
                 
                 {/* Quick Info */}
