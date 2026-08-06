@@ -63,7 +63,7 @@ jobs:
           # Copy built files from dist to root
           cp dist/index.html .
           cp -r dist/assets .
-          cp public/favicon.svg .
+          cp dist/favicon.svg .
           
           # Create .nojekyll to prevent Jekyll processing
           touch .nojekyll
