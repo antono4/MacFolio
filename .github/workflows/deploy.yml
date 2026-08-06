@@ -46,6 +46,8 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
       
       - name: Backup source files to separate branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # Create a backup of source files on a separate branch
           git worktree add /tmp/source-backup source || git branch source || true
@@ -53,9 +55,11 @@ jobs:
           git fetch origin main || true
           git checkout main -- src public index.html package.json package-lock.json vite.config.js tailwind.config.js postcss.config.js .github LICENSE README.md 2>/dev/null || true
           git branch -f source 2>/dev/null || true
-          git push origin source --force 2>/dev/null || echo "Source backup created"
+          git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git" source --force 2>/dev/null || echo "Source backup created"
       
       - name: Deploy built files
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # Remove source files from main branch checkout
           rm -rf src public index.html
@@ -75,7 +79,7 @@ jobs:
           echo "" >> README.md
           echo "Source code is preserved in the \`source\` branch." >> README.md
           
-          # Commit and push
+          # Commit and push using HTTPS with token
           git add -A
           git commit -m "Deploy built files to GitHub Pages [skip ci]" || echo "No changes to commit"
-          git push -f origin main
+          git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git" main --force
