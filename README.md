@@ -1,1 +1,32 @@
-Last updated: 2026-08-25 13:23:09 WIB
+# macfolio-portfolio
+
+
+
+## 📋 Overview
+
+This repository contains **19 files** and is built with the following technologies:
+
+Node.js, HTML, JavaScript
+
+## 🚀 Quick Start
+
+```bash
+npm install
+npm run dev
+npm run build
+```
+
+## ✨ Features
+
+- 📝 Auto-generated documentation
+
+## 🛠️ Technologies
+
+Node.js, HTML, JavaScript
+
+## 📄 License
+
+MIT License
+
+---
+*Last updated: 2026-08-25 13:25:54 WIB*
