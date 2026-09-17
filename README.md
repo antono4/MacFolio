@@ -1,70 +1,66 @@
-<!-- README ini dihasilkan otomatis oleh .github/workflows/generate-readme.yml -->
-<!-- Jangan edit manual: perubahan akan ditimpa pada run berikutnya. -->
+<!-- README ini dihasilkan otomatis oleh workflow .github/workflows/generate-readme.yml -->
+<!-- Jangan edit manual; perubahan akan ditim pada run berikutnya. -->
 
-<h1 align="center">Portfolio 👋</h1>
+<h1 align="center">Portfolio - MacOS Style 👋</h1>
+
+<p align="center">
+  <strong>Portfolio - MacOS Style</strong>
+</p>
 
 <p align="center">
   <a href="https://github.com/antono4/MacFolio"><img alt="GitHub repo" src="https://img.shields.io/badge/GitHub-antono4/MacFolio-blue?logo=github"></a>
   <a href="https://antono4.github.io/MacFolio/"><img alt="Live Demo" src="https://img.shields.io/badge/Live%20Demo-Online-success?logo=githubpages"></a>
-  <img alt="Files" src="https://img.shields.io/badge/Files-14-informational">
-  <img alt="Last commit" src="https://img.shields.io/github/last-commit/antono4/MacFolio">
+  <img alt="Files" src="https://img.shields.io/badge/Files-17-informational">
+  <img alt="Updated" src="https://img.shields.io/badge/Updated-2026-09-18 06:41:58 WIB-lightgrey">
 </p>
 
 ---
 
 ## 📖 Tentang
 
-Repository **`MacFolio`** adalah proyek Node.js yang dibangun dengan HTML, CSS, JavaScript.
-Situs ini diterbitkan melalui **GitHub Pages** dan dapat diakses di [`https://antono4.github.io/MacFolio/`](https://antono4.github.io/MacFolio/).
+Repository **`MacFolio`** adalah situs web pribadi / portofolio yang diterbitkan melalui **GitHub Pages**. Situs utama berada di [`https://antono4.github.io/MacFolio/`](https://antono4.github.io/MacFolio/).
 
 ## 🗂️ Struktur Proyek
 
 ```
 MacFolio/
-.github/
-  workflows/
-.gitignore
-.nojekyll
-LICENSE
-assets/
-  index-307dd57a.css
-  index-560dfb54.js
-favicon.svg
-index.html
-package-lock.json
-package.json
-postcss.config.js
-tailwind.config.js
-vite.config.js
+├── index.html          # Halaman utama (landing / portofolio)
+├── assets/             # Aset statis (css, js, img, vendor)
+├── forms/               # Form handler (PHP)
 ```
 
 ## 🛠️ Teknologi
 
-Berdasarkan ekstensi berkas yang terdeteksi di repository:
+Berdasarkan isi repository, proyek ini menggunakan:
 
 - `HTML`
 - `CSS`
 - `JavaScript`
 
-> Total **14 berkas** di repository (di luar `.git`, `node_modules`, `dist`, dan `build`).
+> Total **17 file** terdeteksi di repository.
 
 ## 🚀 Menjalankan Secara Lokal
 
-Butuh Node.js:
+Karena ini situs statis (HTML/CSS/JS/PHP), cukup buka `index.html` di browser, atau jalankan server lokal:
 
 ```bash
-npm install
-npm run dev
+# Tanpa dependency
+python3 -m http.server 8000
+# lalu buka http://localhost:8000
+
+# atau dengan PHP (untuk form handler di forms/)
+php -S localhost:8000
 ```
 
 ## 📬 Kontak
 
 - GitHub: [antono4](https://github.com/antono4)
+- Situs: [https://antono4.github.io/MacFolio/](https://antono4.github.io/MacFolio/)
 
 ## 📄 Lisensi
 
-Proyek ini dilisensikan di bawah MIT License — lihat berkas [`LICENSE`](./LICENSE).
+Lihat berkas [`LICENSE`](./LICENSE) untuk informasi lisensi.
 
 ---
 
-<sub>README ini di-generate otomatis oleh GitHub Actions `.github/workflows/generate-readme.yml`.</sub>
+<sub>README ini di-generate otomatis pada **2026-09-18 06:41:58 WIB** oleh GitHub Actions `.github/workflows/generate-readme.yml`.</sub>
